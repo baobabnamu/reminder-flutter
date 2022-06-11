@@ -86,7 +86,8 @@ class QuizQuestionHour extends StatelessWidget {
           'uid': controller.quizUser.value.email!,
         }),
       );
-      return compute(parseQuizModels, response.body);
+      // response.body = utf8.decode(response.bodyBytes);
+      return compute(parseQuizModels, utf8.decode(response.bodyBytes));
     }
 
     Future<http.Response> updateQuizSpace() {

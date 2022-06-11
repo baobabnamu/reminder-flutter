@@ -86,7 +86,7 @@ class QuizQuestionMonth extends StatelessWidget {
           'uid': controller.quizUser.value.email!,
         }),
       );
-      return compute(parseQuizModels, response.body);
+      return compute(parseQuizModels, utf8.decode(response.bodyBytes));
     }
 
     Future<http.Response> updateQuizSpace() {
